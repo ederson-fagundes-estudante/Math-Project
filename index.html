@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<meta charset="utf-8"/>
+<title>Ponto médio</title>
+<style>
+body{
+	font-family: 'Roboto Condensed', sans-serif;
+    padding: 0px;
+    margin:0px;
+    text-align:center;
+    background-color:#E9E9E9;
+}
+.titulo{
+	color:#27373E;
+    border-bottom: 1px solid black;
+    background-color:white;
+    padding: 2% 0 2% 0;
+    letter-spacing: 10px;
+	background-image: url("Img/Titulo.jfif.png");
+}
+footer{
+	background-color:gray;
+    color:white;
+    padding: 30px;
+    letter-spacing:5px;
+}
+main{
+	background:#C7EBD0;
+    text-align:left;
+    overflow-wrap: break-word;
+    padding-right: 150px;
+    padding-bottom: 5%;
+}
+.foto{
+    font-size:4vw;
+}
+.texto{
+    margin-top: 100px;
+    height: 100%;
+}
+h2{
+    mix-blend-mode: difference;
+    color: white;
+    line-height: 50vh;
+    text-shadow: 10px 2px 5px black;
+    animation: meiaAresta 1s;
+}
+ main h1{
+    margin-right: 10%;
+    border-bottom: 1px solid black;
+    margin: 0px 30vw 0px 90px;
+    font-size: 4vw;
+    padding-top:10vw;
+    padding-bottom: 2vw;
+}
+.tela1{
+    height: 100vh;
+    background-color: black;
+	background-image: url("https://cdn.dribbble.com/users/1595839/screenshots/11700339/media/5b39c07a6a721b6b440288c6c6ec5cb1.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+}
+h1{
+    margin: 0;
+}
+@keyframes meiaAresta{
+    from{opacity: 0; line-height: 60vh;}
+}
+.aparecer{
+    right: 5%;
+    box-shadow: 4px 4px 13px rgb(0,0,0,0.3);
+    position: relative;
+}
+ul{
+    align-items: center;
+    margin: 0;
+    padding: 0;
+	background-image: url("Img/ul.png");
+}
+li{
+    display: inline-block;
+    background-color: #03cb76;
+    color: white;
+    padding: 2% 0% 2% 0%;
+    width: 10%;
+    margin-right: 2%;
+    transition: 0.25s;
+    cursor:pointer;
+}
+li:hover{
+    background-color: #0ed180;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+.sticky + main {
+    margin-top: 10vh;
+}
+main img{
+    width: 35vw;
+    right: -35vw;
+    position: absolute;
+    float: right;
+    transition: 1s;
+    border-radius: 0px 50px 0px 50px;
+    z-index: 1;
+}
+.im{
+    position:absolute;
+    transition: 1s;
+    height: 50%;
+    width: 100%;
+    margin-top:14vw;
+    pointer-events:none;
+}
+p{  
+    padding: 0px 33vw 20px 90px;
+    margin: 0;
+    font-size: 2.4vw;
+}
+.separador{
+    display: inline-block;
+    position: relative;
+}
+main button{
+    margin: 10vh 33vw 20px 90px;
+    box-shadow: 0 .5rem 1.5rem rgba(64,64,64,.1)!important;
+    color: #006fcc;
+    border: 1px solid transparent;
+    border-color: #006fcc;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    padding: .8125rem 1.25rem;
+    font-size: 1rem;
+    border-radius: .375rem;
+    line-height: 1.4;
+    box-sizing: border-box;
+    font-family: Roboto,sans-serif;
+	background:#C7EBD0;
+    transition: 0.25s;
+}
+main button:hover{
+	background: #006fcc;
+    color: white;
+}
+iframe{
+    position: fixed;
+    top: 0;
+    height: 90%;
+    width: 70%;
+    vertical-align: 50%;
+    z-index: 4;
+    padding: 0;
+    line-height: 0;
+    margin-left: -15px;
+}
+#preto{
+    transition: 1s;
+    opacity: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+}
+.interaçao{
+    pointer-events:none;
+}
+</style>
+</head>
+<body>
+
+<div class="tela1">
+<h1 class="titulo">Trabalho de matemática</h1>
+<div class="foto">
+    <div class="texto"><h2 id="overlay">Ponto médio de segmento</h2></div>
+</div>
+</div>
+<header id="header">
+    <ul>
+        <li onclick=" $('html,body').animate({ scrollTop: $('#im1').offset().top-0.25*vh}, 'slow');">Introdução</li>
+        <li onclick=" $('html,body').animate({ scrollTop: $('#im2').offset().top-0.25*vh}, 'slow');">O que é</li>
+        <li onclick=" $('html,body').animate({ scrollTop: $('#im3').offset().top-0.25*vh}, 'slow');">Como se calcula</li>
+        <li onclick=" $('html,body').animate({ scrollTop: $('#im4').offset().top-0.25*vh}, 'slow');">Formulas</li>
+        <li onclick=" $('html,body').animate({ scrollTop: $('#im5').offset().top-0.25*vh}, 'slow');">Exemplo</li>
+        <li onclick=" $('html,body').animate({ scrollTop: $('#im6').offset().top-0.25*vh}, 'slow');">O que é</li>
+        <li onclick=" $('html,body').animate({ scrollTop: $('#im7').offset().top-0.25*vh}, 'slow');">Formula Ponto Mèdio</li>
+    </ul>
+</header>
+<main><div id="im1" unselectable="on" class="im" style="overflow:hidden"><img id="img1" src="Img/01.png"></div>
+    <h1>Ponto médio de um segmento formado por 2 pontos</h1>
+    <p>Alunos: Ederson, Cassiano, Leonardo e Bruno</p>
+    <div id="im2" unselectable="on" class="im" style="overflow:hidden"><img id="img2" src="Img/02.png"></div>
+    <h1>O que é um segmento formado por 2 pontos</h1>
+    <p>Segmentos de  retas  possuem um ponto inicial e um ponto final. Eles podem ser consecutivos, adjacentes e colineares.</p>
+    <p>São representados dentro de colchetes [AB] ou com um traço acima das letras AB</p>
+    <div id="im3" unselectable="on" class="im" style="overflow:hidden"><img id="img3" src="Img/03.png"></div>
+    <h1>Como se calcula um segmento formado por 2 pontos</h1>
+    <p>Para calcular a distância entre os pontos A e B, devemos escolher pontos que possuem coordenadas quaisquer A (x1, y1) e B (x2, y2).</p>
+    <div id="im4" unselectable="on" class="im" style="overflow:hidden"><img id="img4" src="Img/04.png"></div>
+    <h1>Fórmula distância de dois pontos</h1>
+    <p>A distância entre os pontos A(x1, y1) e B(x2, y2) é definida pelo comprimento do segmento representado por  DAB e tem medida dada por:</p>
+    <p>Diametro AB = √(x2- x1)² + (y2 - y1)²</p>
+    <div id="im5" unselectable="on" class="im" style="overflow:hidden"><img id="img5" src="Img/05.png"></div>
+    <h1>Exemplo fórmula da distância entre dois pontos</h1>
+    <p>Diametro AB</p>
+    <p>DAB =  √(2- (-3))² + ( 1 - (-3))²</p>
+    <p>DAB = √(2+3)² + (1+11)²</p>
+    <p>DAB = √(5)²  + (12)²</p>
+    <p>DAB = √25 + 144</p>
+    <p>DAB  =  √16        DAB = 13</p>
+    <div id="im6" unselectable="on" class="im" style="overflow:hidden"><img id="img6" src="Img/06.png"></div>
+    <h1>O que é o ponto médio</h1>
+    <p>É o ponto que separa o segmento em duas partes com medidas iguais.</p>
+    <div id="im7" unselectable="on" class="im" style="overflow:hidden"><img id="img7" src="Img/07.png"></div>
+    <h1>Formula Ponto Mèdio de um Segmento Formado por 2 pontos</h1>
+    <p>Para calcular o ponto médio de um segmento formado por 2 pontos, serão duas formulas, uma para o x médio  e outra para o y médio, que forma o ponto medio:</p>
+    <p>Xm = X1 + x2 / 2</p>
+    <p>X1 seria o x do ponto 1 e x2 o x do ponto 2</p>
+    <p>Ym=  X1 + x2 / 2</p>
+    <p>Fazendo a mesma coisa com o y o resultado dos dois ficariam (xm, ym)</p>
+    <div id="im8" unselectable="on" class="im" style="overflow:hidden"><img id="img8" src="Img/08.png"></div>
+    <h1>Como usar a Fórmula do Ponto Médio</h1>
+    <p>Se os pontos fossem: A (1,1) e B (3,3)</p>
+    <p>Ym = 1 + 3 / 2</p>
+    <p>Ym = 4 / 2</p>
+    <p>Ym = 2</p>
+    <p>Ym = 1 + 3 / 2</p>
+    <p>Ym = 4 / 2</p>
+    <p>Ym = 2</p>
+    <p>M=(2,2)</p>
+    <div id="im9" unselectable="on" class="im" style="overflow:hidden"><img id="img9" src="Img/09.png"></div>
+    <h1>Exemplo 1:</h1>
+    <p>Cassiano tem um lápis que em seu plano cartesiano marca a ponta de começo do seu lápis (1,0) e aponta final do lápis (1,6). Ele quer saber qual é o meio do seu lápis.</p>
+    <div id="im10" unselectable="on" class="im" style="overflow:hidden"><img id="img10" src="Img/10.png"></div>
+    <h1>Resolução:</h1>
+    <p>Xm = 1 + 1 / 2</p>
+    <p>Xm = 2 / 2</p>
+    <p>Xm = 1</p>
+    <p>Ym = 0 + 6 / 2</p>
+    <p>Ym = 6 / 2</p>
+    <p>Ym = 3</p>
+    <p>M = (1,3)</p>
+    <div id="im11" unselectable="on" class="im" style="overflow:hidden"><img id="img11" src="Img/11.png"></div>
+    <h1>Exemplo 2:</h1>
+    <p>Em um dia chuvoso Bruno estava indo para sua casa após a escola, porém deixou cair o seu guarda chuva dentro do bueiro e ele ficou pendurado, para conseguir pegar o guarda chuva de volta ele precisa calcular a média de seu cabo, ajude Bruno para que ele consiga voltar para casa.  Informações: A(5,0) B(5,-6)</p>
+    <div id="im12" unselectable="on" class="im" style="overflow:hidden"><img id="img12" src="Img/12.png"></div>
+    <h1>Resolução:</h1>
+    <p>Xm = 5 + 5 / 2</p>
+    <p>Xm = 10 / 2</p>
+    <p>Xm = 5</p>
+    <p>Ym = 0 - 6 / 2</p>
+    <p>Ym = -6 / 2</p>
+    <p>Ym = -3</p>
+    <p>M = (5,-3)</p>
+    <div id="im13" unselectable="on" class="im" style="overflow:hidden"><img id="img13" src="Img/13.png"></div>
+    <h1>O ponto médio está triste, realize as atividades para deixar ele feliz.</h1>
+    <button onclick="iFrame();">Jogar</button><p><br><br></p>
+    <div style="background-color:black;position:fixed;width:100%;height:100%;pointer-events:none;"></div>
+    
+    <div onclick="iFrame2();" class="interaçao" id="preto"></div>
+
+    <iframe class="interaçao" position="absolute" id="jogo" frameBorder=0 data-src="Teste1.html" src="about:blank"></iframe>
+
+
+
+
+</main>
+
+<footer><b>Creditos:</b><br>
+Codigo/site: Ederson<br>
+Calculadora: Cassiano<br>
+Conteúdo: Cassiano/Bruno/Leonardo
+</footer>
+<script>
+function iFrame() {
+    var iframe = $("#jogo");
+    var preto = $("#preto");
+    iframe.attr("src", iframe.data("src")); 
+    iframe.removeClass("interaçao");
+    preto.removeClass("interaçao");
+    preto.css("opacity","0.35");
+    preto.css("z-index","3");
+}
+function iFrame2() {
+    var iframe = $("#jogo");
+    var preto = $("#preto");
+    iframe.attr("src", "about:blank"); 
+    preto.css("opacity","0");
+    iframe.addClass("interaçao");
+    preto.addClass("interaçao");
+}
+
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    window.onscroll = function() {myFunction()};
+        var header = document.getElementById("header");
+        var heade = header.offsetTop;
+        var img1 = document.getElementById("img1");
+        var im1 = document.getElementById("im1");
+        var i1 = im1.offsetTop-0.65*vh;
+        var img2 = document.getElementById("img2");
+        var im2 = document.getElementById("im2");
+        var i2 = im2.offsetTop-0.65*vh;
+        var img3 = document.getElementById("img3");
+        var im3 = document.getElementById("im3");
+        var i3 = im3.offsetTop-0.65*vh;
+        var img4 = document.getElementById("img4");
+        var im4 = document.getElementById("im4");
+        var i4 = im4.offsetTop-0.65*vh;
+        var img5 = document.getElementById("img5");
+        var im5 = document.getElementById("im5");
+        var i5 = im5.offsetTop-0.85*vh;
+        var img6 = document.getElementById("img6");
+        var im6 = document.getElementById("im6");
+        var i6 = im6.offsetTop-0.85*vh;
+        var img7 = document.getElementById("img7");
+        var im7 = document.getElementById("im7");
+        var i7 = im7.offsetTop-0.85*vh;
+        var img8 = document.getElementById("img8");
+        var im8 = document.getElementById("im8");
+        var i8 = im8.offsetTop-1*vh;
+        var img9 = document.getElementById("img9");
+        var im9 = document.getElementById("im9");
+        var i9 = im9.offsetTop-1*vh;
+        var img10 = document.getElementById("img10");
+        var im10 = document.getElementById("im10");
+        var i10 = im10.offsetTop-1*vh;
+        var img11 = document.getElementById("img11");
+        var im11 = document.getElementById("im11");
+        var i11 = im11.offsetTop-1*vh;
+        var img12 = document.getElementById("img12");
+        var im12 = document.getElementById("im12");
+        var i12 = im12.offsetTop-1*vh;
+        var img13 = document.getElementById("img13");
+        var im13 = document.getElementById("im13");
+        var i13 = im13.offsetTop-1*vh;
+        function myFunction() {
+          if (window.pageYOffset > heade) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+          for(var i=1;i<=13;i++){
+            if(window.pageYOffset>window['i'+i]){
+                window['img'+i].classList.add("aparecer");
+            } else{
+                window['img'+i].classList.remove("aparecer");
+            }
+          }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+body{
+    align-items: center;
+    align-content: center;
+    position: absolute;
+}
+form{
+    margin: 0 33vw 0px 90px;
+    box-shadow: 0 .5rem 1.5rem rgba(64,64,64,.1)!important;
+    color: #006fcc;
+    border: 1px solid transparent;
+    border-color: #006fcc;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    padding: .8125rem 1.25rem;
+    font-size: 1rem;
+    border-radius: .375rem;
+    line-height: 1.4;
+    box-sizing: border-box;
+    font-family: Roboto,sans-serif;
+	background:#C7EBD0;
+    transition: 0.25s;
+}
+input{
+    width: fit-content;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 25px;
+}
+    </style>
+</head>
+<body>
+
+    <form name="formcalcx">
+
+        Cordenada XA: <input type="number" autocomplete=off name="txtnumxa"> <br>
+        Cordenada XB: <input type="number" autocomplete=off name="txtnumxb"> <br> <br>
+
+    </form>
+
+    <form name="formcalcy">
+
+        Cordenada YA: <input type="number" autocomplete=off name="txtnumya"> <br>
+        Cordenada YA: <input type="number" autocomplete=off name="txtnumyb"> <br> <br> <br>
+
+        <!--botoes de resultado-->
+        Ponto médio X: <input type="number" readonly="readonly" autocomplete=off name="txtresx"> <br>
+        Ponto médio Y: <input type="number" readonly="readonly" autocomplete=off name="txtresy"> <br>
+
+    </form>
+
+    <input type="button" value="Calcular" onclick="sumValues()"> <br> <br>
+
+    <script type="text/javascript">
+
+        function sumValues(){
+        
+        //transforamar os forms em variaveis
+            var xa, xb, ya, yb
+         xa=Number(document.formcalcx.txtnumxa.value)
+         xb=Number(document.formcalcx.txtnumxb.value)
+         ya=Number(document.formcalcy.txtnumya.value)
+         yb=Number(document.formcalcy.txtnumyb.value)
+        
+        //calculo
+         respostax = (xa + xb) / 2
+         respostay = (ya + yb) / 2
+        
+        //resultados do calculo
+         document.formcalcy.txtresx.value=respostax
+         document.formcalcy.txtresy.value=respostay
+        }
+
+    </script>
+</body>
+</html>
